@@ -10,6 +10,7 @@ builder.Services.AddSwaggerGen(); // fixed - actually add Swagger generator
 
 var app = builder.Build();
 
+// Middleware pipeline starts
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -19,4 +20,5 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.MapControllers();
 
+// starts the server(kestrel)
 app.Run();
